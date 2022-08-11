@@ -18,7 +18,7 @@ function optionerDist() {
         text += '<option value="' + dist.districts[i].district_name + '">' + dist.districts[i].district_name + '</option>';
     }
 
-    $(".city").append(text);
+    $(".city").html(text);
 
 }
 
@@ -37,8 +37,12 @@ function populateCenters(dist) {
 
 $('body').on("change", ".state", function () {
     let value = $(this).val();
+    $("tbody").html("");
+    $(".city").html("");
     if (value == "34")
         optionerDist();
+  
+ 
 
 })
 $('body').on("change", ".city", function () {
